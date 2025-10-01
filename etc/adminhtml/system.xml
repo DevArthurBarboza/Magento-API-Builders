@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="arthur" translate="label" sortOrder="999999">
+            <label>Arthur</label>
+        </tab>
+        <section id="builder" translate="label" type="text" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Builder</label>
+            <tab>arthur</tab>
+            <resource>Magento_Config::config_system</resource>
+            <group id="get" translate="label" type="text" sortOrder="1000" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Api Get</label>
+                <field id="user" translate="label comment" type="text" sortOrder="100" showInDefault="1" canRestore="1">
+                    <label>User</label>
+                </field>
+                <field id="password" translate="label comment" type="text" sortOrder="100" showInDefault="1" canRestore="1">
+                    <label>Password</label>
+                </field>
+                <field id="port" translate="label comment" type="text" sortOrder="100" showInDefault="1" canRestore="1">
+                    <label>Port</label>
+                </field>
+                <field id="url" translate="label comment" type="text" sortOrder="100" showInDefault="1" canRestore="1">
+                    <label>Url</label>
+                </field>
+            </group>
+            <group id="post" translate="label" type="text" sortOrder="1000" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Api Post</label>
+                <field id="user" translate="label comment" type="text" sortOrder="100" showInDefault="1" canRestore="1">
+                    <label>User</label>
+                </field>
+                <field id="password" translate="label comment" type="text" sortOrder="100" showInDefault="1" canRestore="1">
+                    <label>Password</label>
+                </field>
+                <field id="port" translate="label comment" type="text" sortOrder="100" showInDefault="1" canRestore="1">
+                    <label>Port</label>
+                </field>
+                <field id="url" translate="label comment" type="text" sortOrder="100" showInDefault="1" canRestore="1">
+                    <label>Url</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

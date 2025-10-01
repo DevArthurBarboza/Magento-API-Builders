@@ -1,0 +1,52 @@
+<?php 
+
+namespace Arthur\Builders\Model;
+
+use Arthur\Builders\Helper\Config;
+class GetApi {
+
+    public $url;
+
+    public $port;
+
+    public $auth;
+
+    public $params;
+
+    protected $config;
+
+    public function __construct(Config $config)
+    {
+        $this->config = $config;
+    }
+
+    public function send()
+    {
+        $url = $this->url;
+
+        if ($this->port != null) {
+            $url .= ':' . $this->port;
+        }
+
+        if ($this->params != null && !empty($this->params)) {
+            $url .= http_build_query($this->params);
+        }
+
+        $auth = $this->config->retrieveGetMethodUser() . ":" . $this->config->retrieveGetMethodPassword(); 
+
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HTTPGET, true);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_USERPWD, $auth);
+
+        $response = curl_exec($curl);
+
+        if ($response === false) {
+            echo 'Error on curl';
+            exit;
+        }
+
+        return $response;
+    }
+}
