@@ -1,4 +1,4 @@
-# Factories
+# Builder
 
 O presente módulo se trata de um módulo para estudo e aplicação do design pattern Builder.
 
